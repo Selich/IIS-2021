@@ -9,29 +9,27 @@ marp: true
 # **Informacioni sistem za minimizaciju otpatka hrane**
 
 Student: Nikola Selić
-Asistent: Nikola Selić
+Asistent: Nikola Todorović
 
 ---
-# **Motivacija - postupak usvajanja**
 ---
-
-#### **Motivacija - postupak usvajanja**
+#### **Motivacija - postupak merenja**
 
 ![bg left:40% 80%](https://uspto.report/patent/app/20190186986/US20190186986A1-20190620-D00000.png)
 
 ### Vremenski zahtevan proces
-- Kuhinjski asistenti moraju da izdvoje dosta vremena svakoga dana zarad merenja otpada
+- Ugostitelji moraju da izdvoje dosta vremena svakoga dana zarad merenja otpada
 
 ---
-#### **Motivacija - postupak usvajanja**
+#### **Motivacija - postupak merenja**
 
 ### Rucno obradjivanje podataka
 - Pomoću ovog informacionog sistema, korisnici su u mogućnosti da pomoću kamere i vage sistem sam detektuje i izračuna količinu otpada od hrane
-- Najčešće ovaj proces se obavlja ručno od strane kuhinjskih asistenata ili se uopšte ne radi.
-- Nedostatak informacije o količini otpada, i njeno dalje recikliranje, može uticati na dalje poslovanje predužeća.
+- Najčešće ovaj proces se obavlja ručno od strane kuhinjskih pomoćnika ili se uopšte ne radi.
+- Nedostatak informacije o količini otpada, i njeno dalje recikliranje, može uticati na dalje poslovanje ugostiteljskog objekta.
 
 ---
-#### **Motivacija - postupak usvajanja**
+#### **Motivacija - postupak merenja**
 
 ![bg left:40% 80%](https://miro.medium.com/max/600/0*7PgQsp0nYHjMpLXX.png)
 ### Neblagovremeno obavestavanje
@@ -40,19 +38,19 @@ Asistent: Nikola Selić
 
 ---
 ### **Motivacija**
-##### **Poklapanje želja ekološke svesnosti i ugostiteljskih ciljeva**
+##### **Ekološka svest i minimizacija troškova**
 
 - Istraživanje u **Švajcarskoj** govori da ugostiteljski objekti za sada doniraju samo **5%** svojih ostataka hrane, dok ukupno **2.6 miliona tona otpada** od hrane se zabeleži svake godine. Računica govori da skoro **190 kg** otpada hrane se stvori za godinu dana po glavi stanovnika. [1]
 
 ---
 ### **Motivacija**
-##### **Poklapanje želja ekološke svesnosti i ugostiteljskih ciljeva**
+##### **Ekološka svest i minimizacija troškova**
 
 - Istaživnaje u **SAD** govori da su u blagoj prednosti u odnosu na prethodno pomenutu državu,  i da svaki stanovnik godišnje stvori oko **100kg** hrane završi medju otpatke. [2]
 
 ---
 ### **Motivacija**
-##### **Poklapanje želja ekološke svesnosti i ugostiteljskih ciljeva**
+##### **Ekološka svest i minimizacija troškova**
 
 - Istraživanje radjeno na teritoriji **Republike Srbije** govori da je skoro **247,000 tona** hrane bačeno svake godine, tj. **676 tona** hrane svakog gana. 
 - Podatak je poražavajuć ako se uzme u obzir da je prosečna plata u Srbiji manja od **500 evra mesečno**. 
@@ -60,7 +58,7 @@ Asistent: Nikola Selić
 
 ---
 ### **Motivacija**
-##### **Poklapanje želja ekološke svesnosti i ugostiteljskih ciljeva**
+##### **Ekološka svest i minimizacija troškova**
 
 Najčešći otpad je hleb (**10.18kg**), meso (**7.18kg**) i mleko(**6.74 litara**).
 
@@ -72,15 +70,17 @@ Razlog odbacivanja hrane je:
 ---
 ### **Ciljevi**
 
-- **Pojednostavljanje procesa merenja**
+- **Pojednostavljanje procesa merenja hrane**
 - **Brže informisanje ugostitelja o otpadu hrane**
 - **Smanjenje hrane u otpadu, i samim tim smanjenje troškova**
 - **Dodatne povratne informacije o hrani koja je služena gostima**
 - **Implementacija sistema preporuke**
+- **Prepoznavanje trenda**
 
 ---
 
 ### **Funkcionalni zahtevi**
+#### Postojanje menija
 
 Svaki restoran ima svoji **meni**, i na tom meniju različite vrste mesa, povrća, voća i žitarica.
 
@@ -91,49 +91,33 @@ Svaku sliku pre svega model mora da prepozna i klasifikuje da li je to komad odg
 ---
 
 ### **Funkcionalni zahtevi**
-#### Treniranje modela
+#### Treniranje modela za prepoznavanje hrane
 
 Učenje nad podacima se odvija na već obeleženim slikama informacionog sistema i odvija se u sistemu za obradu podataka.
 
 Ljudi koji su odgovorni za klasifikaciju i obeležavanja slika su podeljeni u više grupa po merodovnosti (*eng. level* ).
 
+Dolazi do koncenzusa i odgovarajuća slika se smatra kao dobro ocenjena slika
+
 ---
 
 ### **Funkcionalni zahtevi**
-#### Treniranje modela
-Postoje tri grupe. *level 1*, *level 2* i *level 3*.
-
-**Prva** grupa predstavlja ljude početnike i njihovo ocenjivanje i klasifikovanje slika je najmanje pouzdano.
-
-**Druga** grupa je merodovnije i ima presedan nad klasifikacijom prethodne grupe.
-
----
-### **Funkcionalni zahtevi**
-#### Treniranje modela
-**Treća grupa** ima najveći prioritet i odgovorna je da li je član iz prve i druge grupe dobro uradio klasifikaciju. Prolazi kroz sistem koncenzusa gde se glasanjem utvrdjuje da li je slika dobro klasifikovana tj. prepoznata.
-
----
-### **Funkcionalni zahtevi**
-#### Arhitektura sistema
-Klijent može imati više restorana, 
-i svaki restoran može imati više kuhinja.
-
-Svaka kuhinja može imati više vaga zabeleženih u svom sistemu.
+#### Treniranje modela za prepoznavanje hrane
 
 ---
 ### **Funkcionalni zahtevi**
 
-- **Postavljanje nove vage i registrovanje novog klijenta**
-- **Prikaz prepoznate hrane na vagi i povratna informacija korisniku**
+- **Postavljanje nove vage i registrovanje novog restorana**
 - **Izveštaj klijentu o dnevnoj, nedeljnoj, i mesešnoj potrošnji**
 - **Samo prepoznavanje hrane i kojoj kategoriji pripada**
-- **Sistem za preporuku**
+- **Povratna informacija ugostitelju o potencijalnom trošku**
+- **Sistem za preporuku novog menija**
 
 ---
 ### **Tehnologije**
 #### Arhitektura sistema
 
-- Uredjaj registruje promene *event* i pomocu http šalje podatak o merenju serverskoj aplikaciji.
+- Uredjaj registruje promene *event* i šalje podatak o merenju serverskoj aplikaciji.
 - Serverska aplikacija upisuje novu izmenu u bazi podataka sa svim informacijama vezane za vagu i merenje.
 - Prikaz podataka radi se preko web aplikacije preko koje korisnik može pristupiti sa svojim nalogom
 
@@ -143,18 +127,17 @@ Svaka kuhinja može imati više vaga zabeleženih u svom sistemu.
 ### **Tehnologije**
 #### Arhitektura sistema
 
-- U procesu izrade softvera koristićemo 
 - U zavisnosti od broja korisnika i mogućnosti da li možemo priuštiti odgovarajuće servere, koristićemo *cloud* servise - *AWS*
+
 - Prikaz podataka bi trebao biti nezavistan od uredjaja na kome se prikazuje i to nam trenutno omogućuje web tehnologija i web aplikacije
 
 ---
 ### **Tehnologije**
 #### Arhitektura sistema
 
-- Serverska aplikacija bi trebala biti izgradjena u tehnologiji sa dobrom podrškom i ekosistemom
-- Tehnologija u kome mi bila izgradjena aplikacija mora podržati paralelizam zato što se očekuje da će u nekom trenutku broj zahteva merenja biti veći.
-- Softver može biti izgrađen u stilu mikroservisne arhitekture, bar izdvojiti zaseban servis za preporuku. 
+- Serverska aplikacija bi trebala biti izgradjena u tehnologiji sa dobrom podrškom i ekosistemom npr. Java Spring
 
+- Softver može biti izgrađen u stilu mikroservisne arhitekture, bar izdvojiti zaseban servis za preporuku. 
 
 
 ---
